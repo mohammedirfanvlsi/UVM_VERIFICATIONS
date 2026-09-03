@@ -31,7 +31,8 @@ import uvm_pkg::*;
         super.build_phase(phase);
 
         // "Get the interface named 'vif' and put it in my variable 'vif'"
-    if (!uvm_config_db#(virtual apb_i2c_if)::get(this, "", "vif", vif)) begin          `uvm_fatal("DRV", "Failed to get virtual interface from config_db!")
+    if (!uvm_config_db#(virtual apb_i2c_if)::get(this, "", "vif", vif)) begin       
+        `uvm_fatal("DRV", "Failed to get virtual interface from config_db!")
         end
       endfunction
 
